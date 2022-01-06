@@ -41,7 +41,7 @@ public class OpcionService implements OpcionRepository {
 			  dto.setRonda(opciones.get(i).getPregunta().getRonda().getNombreRonda() );
 			  dto.setValor( opciones.get(i).getPregunta().getRonda().getPremio().getValor());
 			  dto.setNombrePremio(opciones.get(i).getPregunta().getRonda().getPremio().getNombrePremio()  );
-			int x =i;  
+			  int x =i;  
 			
 			while(x < (i+4) )
 			{
@@ -50,13 +50,13 @@ public class OpcionService implements OpcionRepository {
 				opcion.setIdOpcion(opciones.get(x).getIdOpcion());
 				opcion.setTipoOpcion(opciones.get(x).getTipoOpcion());
 				dto.agregarOpcion(opcion);
-			  
-			  listaDTOJuego.add(dto);
+			 
 			  	x++; 	
 			}
-
+			  listaDTOJuego.add(dto);
 			System.out.println("*******se finaliza ****** ");
 		  }
+		  
 		  
 	return listaDTOJuego; 
 
