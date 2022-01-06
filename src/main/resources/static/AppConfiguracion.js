@@ -1,34 +1,39 @@
 const form = document.getElementById("formPreguntas"); 
 const rondaSeleccionada = document.getElementById("ronda"); 
+const rondasCargadas = new Map();
 
-
-document.addEventListener("DOMContentLoaded", async function () {
-    const request = await fetch("/ronda/", {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
-    const ronda = await request.json();
- 
-    const selectRonda = document.getElementById("ronda"); 
-    let AddOptions; 
-
-    ronda.forEach(element => {
-      AddOptions = AddOptions +   `<option value="${element.idRonda}" >
-         ${element.nombreRonda} (${element.categoria.nombreCategoria}) </option>`; 
-    });
-  
-  selectRonda.innerHTML = AddOptions; 
-  
+const cargarRondas = async () =>
+{
+  const request = await fetch("/ronda/", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
   });
+  const ronda = await request.json();
+
+
+  let AddOptions; 
+
+  ronda.forEach( element => {
+    AddOptions = AddOptions +   `<option value="${element.idRonda}" >
+       ${element.nombreRonda} (${element.categoria.nombreCategoria}) </option>`; 
+     
+  });
+
+rondaSeleccionada.innerHTML = AddOptions; 
+}
+
+
+// Se llena el select de opciones (rondas) al momento de cargar el documento. 
+document.addEventListener("DOMContentLoaded", cargarRondas());
 
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
      SaveData(LlenarData()); 
-
+     form.reset(); 
   }); 
 
   const LlenarData = () =>
@@ -84,7 +89,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   // POST 
   const SaveData = async (objetos)  =>
   {
-    console.log("lo que va al servidor es: " + JSON.stringify(objetos) )
     const request = await fetch("/pregunta/", {
         method: "POST",
         headers: {
@@ -93,5 +97,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         },
         body: JSON.stringify(objetos)
       });
-
+      cargarRondas(); 
   }
+
+
+ 

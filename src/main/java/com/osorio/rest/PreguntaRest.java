@@ -40,7 +40,17 @@ private RondaService rondaService;
 private OpcionService opcionService; 
 
 
+@RequestMapping(value="/pregunta/" , method = RequestMethod.GET)
+public List<Pregunta> getAllPreguntas()
+{
+	return preguntaService.GetAllPreguntas(); 
+}
 
+@RequestMapping(value="/pregunta/filas" , method = RequestMethod.GET)
+public long getCountRows()
+{
+	return preguntaService.getCountRows(); 
+}
 
 @RequestMapping(value="/pregunta/" , method = RequestMethod.POST )
 public void GuardarPregunta(@RequestBody String preg )

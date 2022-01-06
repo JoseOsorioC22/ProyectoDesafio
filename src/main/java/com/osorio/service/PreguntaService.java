@@ -6,6 +6,7 @@ import java.util.function.Function;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +34,11 @@ public class PreguntaService implements PreguntaRepository {
 
 	@Override
 	public List<Pregunta> GetAllPreguntas() {
-		// TODO Auto-generated method stub
-		return null;
+		
+	String sql = "select * from pregunta"; 
+	  List<Pregunta> preguntas = entityManager.createNativeQuery(sql,Pregunta.class).getResultList();
+		
+		return preguntas; 
 	}
 
 	@Override
@@ -44,6 +48,14 @@ public class PreguntaService implements PreguntaRepository {
 	
 	}
 	
+	public long getCountRows()
+	{
+		// String sql = "select count(*) from pregunta"; 
 	
+		String sql = "SELECT COUNT(*) FROM Pregunta p";
+		Query q = entityManager.createQuery(sql);
+		long count = (long) q.getSingleResult();
+		return count; 
+	}
 
 }
