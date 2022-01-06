@@ -18,10 +18,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.osorio.model.Opcion;
 import com.osorio.model.Pregunta;
 import com.osorio.model.Ronda;
 import com.osorio.service.PreguntaService;
 import com.osorio.service.RondaService;
+import com.osorio.service.OpcionService;
 
 @RestController
 
@@ -33,7 +35,13 @@ private PreguntaService preguntaService;
 
 @Autowired 
 private RondaService rondaService;
-	
+
+@Autowired
+private OpcionService opcionService; 
+
+
+
+
 @RequestMapping(value="/pregunta/" , method = RequestMethod.POST )
 public void GuardarPregunta(@RequestBody String preg )
 {
@@ -48,7 +56,26 @@ public void GuardarPregunta(@RequestBody String preg )
  for (JsonElement obj : gsonArr) {
      JsonObject gsonObj = obj.getAsJsonObject();
      Ronda ronda = rondaService.ObtenerPorId(gsonObj.get("ronda").getAsInt());
+     Pregunta pregunta = new Pregunta(); 
+     pregunta.setDescripcion(gsonObj.get("descripcion").getAsString()); 
+     pregunta.setRonda(ronda); 
+     preguntaService.SavePregunta(pregunta);
      
+     // Luego empezamos a guardar las opciones 
+     
+     JsonArray opciones = gsonObj.get("opciones").getAsJsonArray();
+     
+     for (JsonElement Opci : opciones ) {
+    	   Opcion opcion = new Opcion(); 
+    	     
+    	   JsonObject JsonOpc = Opci.getAsJsonObject();
+    	     opcion.setDescripcion(JsonOpc.get("opcion").getAsString()); 
+    	     opcion.setPregunta(pregunta); 
+    	     opcion.setTipoOpcion(Boolean.parseBoolean(JsonOpc.get("tipoOpcion").getAsString())); 
+    	     opcionService.saveData(opcion); 
+	}
+     
+  
 }
 	
 }	

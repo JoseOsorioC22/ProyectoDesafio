@@ -51,19 +51,19 @@ document.addEventListener("DOMContentLoaded", async function () {
              ronda: rondaSeleccionada.options[rondaSeleccionada.selectedIndex].value,
              opciones: [
                  {
-                    opcion1 : opciones1[i].value,
+                    opcion : opciones1[i].value,
                     tipoOpcion: false
                  },
                  {
-                    opcion2: opciones2[i].value,
+                    opcion: opciones2[i].value,
                     tipoOpcion: false 
                  }, 
                  {
-                    opcion3: opciones3[i].value,
+                    opcion: opciones3[i].value,
                     tipoOpcion: false
                  }, 
                  {
-                    opcion4: opciones4[i].value,
+                    opcion: opciones4[i].value,
                     tipoOpcion: false
                  }
                      

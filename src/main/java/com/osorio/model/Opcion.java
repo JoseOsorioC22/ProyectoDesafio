@@ -3,6 +3,7 @@ package com.osorio.model;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -13,29 +14,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
-
+@Entity
+@Table(name="opcion")
 public class Opcion  implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_opcion")
-	private Integer idOpcion;
+	private int idOpcion;
 
 	@Column(name = "descripcion")
 	private String descripcion;
 	
 	@Column(name = "tipo_opcion")
-	private Short tipoOpcion;
+	private boolean tipoOpcion;
 	
+	@ManyToOne()
 	@JoinColumn(name = "pregunta", referencedColumnName = "id_pregunta")
 	private Pregunta pregunta;
 
 	
-	public Integer getIdOpcion() {
+	public int getIdOpcion() {
 		return idOpcion;
 	}
 
-	public void setIdOpcion(Integer idOpcion) {
+	public void setIdOpcion(int idOpcion) {
 		this.idOpcion = idOpcion;
 	}
 
@@ -47,11 +50,11 @@ public class Opcion  implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public Short getTipoOpcion() {
+	public boolean getTipoOpcion() {
 		return tipoOpcion;
 	}
 
-	public void setTipoOpcion(Short tipoOpcion) {
+	public void setTipoOpcion(boolean tipoOpcion) {
 		this.tipoOpcion = tipoOpcion;
 	}
 

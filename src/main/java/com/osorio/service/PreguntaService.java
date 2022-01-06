@@ -41,6 +41,7 @@ public class PreguntaService implements PreguntaRepository {
 	public void SavePregunta(Pregunta p) {
 	
 		entityManager.persist(p);
+	
 	}
 	
 	

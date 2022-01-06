@@ -35,13 +35,16 @@ public class RondaService implements RondaRepository {
 	public List<Ronda> getAllRondas() {
 		String query = "select * from ronda where ronda.id_ronda NOT IN (select pregunta.ronda from pregunta )" ; 
 		List<Ronda> rondas = entityManager.createNativeQuery(query, Ronda.class ).getResultList() ; 
+		
 		return rondas; 
 	}
 
 	@Override 
 	public Ronda ObtenerPorId(int id)
 	{
-		return entityManager.find(Ronda.class,id); 
+		Ronda ronda = entityManager.find(Ronda.class,id); 
+		 
+		return ronda; 
 	}
 
 }
