@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>App Configuracion</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--Navegation-->
+    <div class="navbar navbar-primary bg-primary">
+      <div class="navbar-brand">
+        <a href="#">Desafio Preguntas</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="pt-5">
+        <div class="container">
+          <h3>Por favor agrega las preguntas para empezar.</h3>
+
+          <div class="alert alert-warning" role="alert">
+            Por cada ronda que llenes tienes que ir guardando las preguntas
+            <b>Son 5 preguntas por cada ronda con una unica respuesta.</b>
+          </div>
+
+          <div class="card">
+            <div class="card-header"></div>
+
+            <div class="card-body">
+              <select id="ronda">
+
+              </select>
+
+              <br /><br />
+
+              <form id="formPreguntas">
+              
+                <div class="form-group">
+                    <label for="pregunta1">Pregunta</label>
+                    <textarea id="pregunta1" name="pregunta" class=" pregunta form-control" placeholder="" autocomplete="off" ></textarea> 
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                        <div class="form-group">
+                            <label for="repuesta1">Respuesta 1</label>
+                            <textarea id="respuesta1" name="respuesta1" style="width: 310px;" class="respuesta1 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                        </div>
+        
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                    <div class="form-group">
+                        <label for="respuesta2">Respuesta 2</label>
+                        <textarea id="respuesta2" name="respuesta2" style="width: 310px;"  class=" respuesta2 form-control" placeholder="" autocomplete="off" ></textarea> 
+                    </div>
+                    </div>
+                    
+                </div>
+          
+             
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta3">Respuesta 3</label>
+                    <textarea id="respuesta3" name="respuesta3" style="width: 310px;"  class="respuesta3 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta4">Respuesta 4</label>
+                    <textarea id="respuesta4" name="respuesta4" style="width: 310px;"  class="respuesta4 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+                </div>
+
+                <label>Escoja la pregunta correcta de las 4.</label>
+                <select class="seleccionPregunta">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+           
+                <hr class="mt-2 mb-3 pt-2  bg-primary"/>
+
+
+                <div class="form-group">
+                    <label for="pregunta1">Pregunta</label>
+                    <textarea id="pregunta1" name="pregunta" class=" pregunta form-control" placeholder="" autocomplete="off" ></textarea> 
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                        <div class="form-group">
+                            <label for="repuesta1">Respuesta 1</label>
+                            <textarea id="respuesta1" name="respuesta1" style="width: 310px;" class="respuesta1 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                        </div>
+        
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                    <div class="form-group">
+                        <label for="respuesta2">Respuesta 2</label>
+                        <textarea id="respuesta2" name="respuesta2" style="width: 310px;"  class="respuesta2 form-control" placeholder="" autocomplete="off" ></textarea> 
+                    </div>
+                    </div>
+                    
+                </div>
+          
+             
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta3">Respuesta 3</label>
+                    <textarea id="respuesta3" name="respuesta3" style="width: 310px;"  class="respuesta3 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta4">Respuesta 4</label>
+                    <textarea id="respuesta4" name="respuesta4" style="width: 310px;"  class="respuesta4 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+                </div>
+
+                <label>Escoja la pregunta correcta de las 4.</label>
+                <select class="seleccionPregunta">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+           
+                <hr class="mt-2 mb-3 pt-2  bg-primary"/>
+
+
+
+
+
+                <div class="form-group">
+                    <label for="pregunta1">Pregunta</label>
+                    <textarea id="pregunta1" name="pregunta" class="pregunta form-control" placeholder="" autocomplete="off" ></textarea> 
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                        <div class="form-group">
+                            <label for="repuesta1">Respuesta 1</label>
+                            <textarea id="respuesta1" name="respuesta1" style="width: 310px;" class="respuesta1 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                        </div>
+        
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                    <div class="form-group">
+                        <label for="respuesta2">Respuesta 2</label>
+                        <textarea id="respuesta2" name="respuesta2" style="width: 310px;"  class="respuesta2 form-control" placeholder="" autocomplete="off" ></textarea> 
+                    </div>
+                    </div>
+                    
+                </div>
+          
+             
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta3">Respuesta 3</label>
+                    <textarea id="respuesta3" name="respuesta3" style="width: 310px;"  class="respuesta3 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta4">Respuesta 4</label>
+                    <textarea id="respuesta4" name="respuesta4" style="width: 310px;"  class="respuesta4 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+                </div>
+
+                <label>Escoja la pregunta correcta de las 4.</label>
+                <select class="seleccionPregunta">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+           
+                <hr class="mt-2 mb-3 pt-2  bg-primary"/>
+
+
+
+
+
+                <div class="form-group">
+                    <label for="pregunta1">Pregunta</label>
+                    <textarea id="pregunta1" name="pregunta" class=" pregunta form-control" placeholder="" autocomplete="off" ></textarea> 
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                        <div class="form-group">
+                            <label for="repuesta1">Respuesta 1</label>
+                            <textarea id="respuesta1" name="respuesta1" style="width: 310px;" class="respuesta1 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                        </div>
+        
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                    <div class="form-group">
+                        <label for="respuesta2">Respuesta 2</label>
+                        <textarea id="respuesta2" name="respuesta2" style="width: 310px;"  class="respuesta2 form-control" placeholder="" autocomplete="off" ></textarea> 
+                    </div>
+                    </div>
+                    
+                </div>
+          
+             
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta3">Respuesta 3</label>
+                    <textarea id="respuesta3" name="respuesta3" style="width: 310px;"  class="respuesta3 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta4">Respuesta 4</label>
+                    <textarea id="respuesta4" name="respuesta4" style="width: 310px;"  class="respuesta4 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+                </div>
+
+                <label>Escoja la pregunta correcta de las 4.</label>
+                <select class="seleccionPregunta">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+           
+                <hr class="mt-2 mb-3 pt-2  bg-primary"/>
+
+
+
+                <div class="form-group">
+                    <label for="pregunta1">Pregunta</label>
+                    <textarea id="pregunta1" name="pregunta" class="pregunta form-control" placeholder="" autocomplete="off" ></textarea> 
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                        <div class="form-group">
+                            <label for="repuesta1">Respuesta 1</label>
+                            <textarea id="respuesta1" name="respuesta1" style="width: 310px;" class=" respuesta1 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                        </div>
+        
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                    <div class="form-group">
+                        <label for="respuesta2">Respuesta 2</label>
+                        <textarea id="respuesta2" name="respuesta2" style="width: 310px;"  class=" respuesta2 form-control" placeholder="" autocomplete="off" ></textarea> 
+                    </div>
+                    </div>
+                    
+                </div>
+          
+             
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta3">Respuesta 3</label>
+                    <textarea id="respuesta3" name="respuesta3" style="width: 310px;"  class="respuesta3 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-16">
+                <div class="form-group">
+                    <label for="respuesta4">Respuesta 4</label>
+                    <textarea id="respuesta4" name="respuesta4" style="width: 310px;"  class="respuesta4 form-control"  placeholder="" autocomplete="off" ></textarea> 
+                </div>
+                </div>
+                </div>
+
+                <label>Escoja la pregunta correcta de las 4.</label>
+                <select class="seleccionPregunta">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+           
+                <hr class="mt-2 mb-3 pt-2  bg-primary"/>
+
+
+
+                
+
+                <button type="submit" id="btnSave" class="btn btn-success">Guardar Pregunta</button>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <br /><br />
+
+      </div>
+    </div>
+
+    <script src="AppConfiguracion.js"></script>
+  </body>
+</html>
